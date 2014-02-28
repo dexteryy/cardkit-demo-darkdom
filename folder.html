@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CardKit Demo: Folder</title>
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<!-- vim: et:ts=2:sw=2:sts=2 -->
+
+<p>Paragraph A</p>
+<x-folder mode="unfold">
+    <x-caption>Spoiler</x-caption>
+    <p>Paragraph B</p>
+    <p>Paragraph C</p>
+</x-folder>
+<p>Paragraph D</p>
+<p>Paragraph E
+    <x-folder mode="fold">
+        <x-caption>Spoiler</x-caption>
+        <em>Paragraph F</em>
+    </x-folder>
+</p>
+<p>Paragraph G</p>
+
+<script src="bower_components/ozjs/oz.js"></script>
+<script src="js/oz.config.js"></script>
+<script src="js/folder.js"></script>
+<script>
+</script>
+
+</body>
+</html>
+

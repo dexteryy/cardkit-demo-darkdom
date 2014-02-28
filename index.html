@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CardKit Demo: Post List</title>
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<!-- vim: et:ts=2:sw=2:sts=2 -->
+
+<x-postlist 
+    source-selector=".src-postlist">
+  <x-hd>Posts</x-hd>
+  <x-ft>Total:<span>3</span></x-ft>
+  <x-item>
+    <x-title>Post A</x-title>
+    <x-tag>js</x-tag>
+    <x-tag>css</x-tag>
+    <p>Paragraph A
+      <x-folder
+        mode="fold">
+        <x-caption>Spoiler</x-caption>
+        <em>Paragraph B</em>
+      </x-folder>
+    </p>
+    <p>Paragraph C</p>
+  </x-item>
+  <x-item 
+    source-selector=".box2.src-item">
+  </x-item>
+  <script type="text/darkscript">
+  console.info("DarkDOMReady", 
+    this, this.isMountedDarkDOM);
+  </script>
+</x-postlist>
+
+<div class="box1 src-postlist">
+  <ul>
+    <li class="src-item">
+      <em class="src-title">Post B</em>
+    </li>
+  </ul>
+</div>
+
+<div class="box2 src-item">
+  <p class="src-title">Post C</p>
+  Paragraph D
+</div>
+
+<script type="text/template" id="item_tpl">
+<li class="{%= custom.className %}">
+  {% if (state.isEditMode === "true") { %}
+    {%= component.title %}
+    <input type="text" class="tags" 
+      value="{%= custom.tags %}">
+    <div class="opt">
+      <button class="close">Close</button>
+    </div>
+  {% } else { %}
+    <header>
+      {%= component.title %}
+      {% if ((component.tag || []).length) { %}
+        <ul class="taglist">
+          {%= component.tag.join('') %}
+        </ul>
+      {% } %}
+    </header>
+    <article>{%= content || 'Empty' %}</article>
+    <div class="opt">
+      <button class="edit">Edit</button>
+    </div>
+  {% } %}
+</li>
+</script>
+
+<script src="bower_components/ozjs/oz.js"></script>
+<script src="js/oz.config.js"></script>
+<script src="js/postlist.js"></script>
+<script>
+</script>
+
+</body>
+</html>
+

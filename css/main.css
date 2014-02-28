@@ -1,0 +1,178 @@
+
+x-postlist,
+.box1,
+.box2 {
+  display:none;
+}
+
+.demo-postlist {
+  background:#eee;
+  border:1px solid #ccc;
+  max-width:300px;
+  margin:20px auto;
+}
+
+.demo-postlist > header {
+  background:#fff;
+  border-bottom:1px solid #ccc;
+  padding:0;
+  margin:0;
+}
+
+.demo-postlist > header h3 {
+  padding:20px;
+  margin:0;
+  font-size:26px;
+  color:#999;
+}
+
+.demo-postlist footer {
+  background:#fff;
+  padding:20px;
+  font-size:12px;
+  border-top:1px solid #ccc;
+  text-align:right;
+  color:#999;
+}
+
+.demo-postlist > ul {
+  margin:0;
+  padding:20px 20px 0 20px;
+  list-style:none;
+  font-size:14px;
+  color:#666;
+}
+
+.demo-postlist > ul > li {
+  overflow:hidden;
+  position:relative;
+}
+
+.demo-postlist > ul > li header {
+  position:relative;
+  background:#999;
+  color:#fff;
+  height:40px;
+  line-height:40px;
+  padding:0 10px;
+}
+
+.demo-postlist > ul > li h6 {
+  padding:0;
+  margin:0;
+  font-size:16px;
+}
+
+.demo-postlist .taglist {
+  margin:0;
+  padding:0;
+  list-style:none;
+  position:absolute;
+  right:0;
+  top:0;
+}
+
+.demo-postlist .taglist li {
+  float:right;
+  margin:0 10px 0 0;
+  font-size:14px;
+  color:#eee;
+  text-decoration:underline;
+}
+
+.demo-postlist > ul > li article {
+  padding:10px;
+  line-height:150%;
+}
+
+.demo-postlist p {
+  margin:0;
+}
+
+.demo-postlist li.editmode {
+  border:1px solid #999;
+  margin:0 0 20px 0;
+  padding:0 0 50px 0;
+}
+
+.demo-postlist li.editmode input {
+  display:block;
+  width:200px;
+  padding:10px;
+  float:left;
+  margin:20px 20px 0 20px;
+}
+
+.demo-postlist .opt {
+  position:absolute;
+  right:0;
+  bottom:10px;
+}
+
+.demo-postlist .editmode .opt {
+  left:0;
+  text-align:center;
+}
+
+.demo-postlist .opt button {
+  background:#999;
+  border:none;
+  height:20px;
+  padding:0 10px;
+  color:#fff;
+  cursor:pointer;
+}
+
+.demo-postlist .opt button:hover {
+  background:#666;
+}
+
+.demo-folder {
+  display:block;
+  border:1px dashed #999;
+  padding:10px;
+  margin:10px 0;
+  color:#ccc;
+}
+
+.demo-folder .sum {
+  display:block;
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px dashed #999;
+}
+
+.demo-folder .sum .icon {
+  float:right;
+  font-size:12px;
+  line-height:18px;
+  color:#999;
+  text-decoration:underline;
+  cursor:pointer;
+}
+
+.demo-folder .icon.show {
+  display:none;
+}
+
+.demo-folder .detail {
+  color:#333;
+}
+
+.demo-folder.fold .sum {
+  border:none;
+  padding-bottom:0;
+  margin-bottom:0;
+}
+
+.demo-folder.fold .icon.show {
+  display:block;
+}
+
+.demo-folder.fold .icon.hide {
+  display:none;
+}
+
+.demo-folder.fold .detail {
+  display:none;
+}
