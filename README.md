@@ -1,14 +1,17 @@
 
-# CardKit Demo: Dark Component
+# CardKit Demo: DarkDOM
 
 > [DarkDOM](https://github.com/dexteryy/DarkDOM)
+> [CardKit](https://github.com/douban-f2e/CardKit)
 
-## Learning DarkDOM Visually with Dark Component Examples
+## Learning DarkDOM Visually
 
-![douban apps](darkdom_thumbnail.png)
+![darkdom](darkdom_thumbnail.png)
 
-[Online demo (list)](http://dexteryy.github.io/cardkit-demo-graphs/index.html)
-[Online demo (Folder)](http://dexteryy.github.io/cardkit-demo-graphs/folder.html)
+* [PDF version](darkdom.pdf)
+* [PNG version](darkdom.png)
+* [Online demo (list)](http://dexteryy.github.io/cardkit-demo-graphs/index.html)
+* [Online demo (Folder)](http://dexteryy.github.io/cardkit-demo-graphs/folder.html)
 
 ## Install/Update Dependencies
 
