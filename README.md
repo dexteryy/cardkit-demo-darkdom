@@ -1,12 +1,12 @@
 
 # CardKit Demo: DarkDOM
 
-> [DarkDOM](https://github.com/dexteryy/DarkDOM)
-> [CardKit](https://github.com/douban-f2e/CardKit)
+> * [DarkDOM](https://github.com/dexteryy/DarkDOM)
+> * [CardKit](https://github.com/douban-f2e/CardKit)
 
 ## Learning DarkDOM Visually
 
-![darkdom](darkdom_thumbnail.png)
+<a href="darkdom.pdf" target="_blank"><img src="darkdom_thumbnail.png"></a>
 
 * [PDF version](darkdom.pdf)
 * [PNG version](darkdom.png)
