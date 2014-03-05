@@ -10,8 +10,8 @@
 
 * [PDF version](darkdom.pdf)
 * [PNG version](darkdom.png)
-* [Online demo (list)](http://dexteryy.github.io/cardkit-demo-graphs/index.html)
-* [Online demo (Folder)](http://dexteryy.github.io/cardkit-demo-graphs/folder.html)
+* [Online demo (list)](http://douban-f2e.github.io/cardkit-demo-darkdom/index.html)
+* [Online demo (Folder)](http://douban-f2e.github.io/cardkit-demo-darkdom/folder.html)
 
 ## Install/Update Dependencies
 

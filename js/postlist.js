@@ -79,7 +79,7 @@ function item_render(model){
   model.custom = {};
   if (model.state.isEditMode === 'true') {
     model.custom.className = 'editmode';
-    model.custom.tags = model.componentData.tag
+    model.custom.tags = (model.componentData.tag || [])
       .map(function(tag_model){
         return tag_model.content;
       }).join(',');
@@ -170,45 +170,60 @@ function item_spec(item_guard){
 }
 
 var item_events = {
-  showEdit: function(e, node){
-    node.attr('edit-mode', true);
-    $('x-postlist').updateDarkDOM();
-  },
-  closeEdit: function(e, node){
-    node.attr('edit-mode', false);
-    $('x-postlist').updateDarkDOM();
-    if (node[0].nodeName !== 'X-ITEM') {
-      alert('It is easy to update content from '
-        + 'Source Root but not implemented here.');
-    }
-  },
-  titleChange: function(e, node){
-    if (node[0].nodeName !== 'X-ITEM') {
-      return;
-    }
-    var title = node.find('x-title');
-    if (title[0]) {
-      title.html(e.target.value);
+  showEdit: function(e, dark_root, feeder){
+    if (dark_root) {
+      dark_root.attr('edit-mode', true);
     } else {
-      node.append('<x-title>' 
-        + e.target.value + '</x-title>');
+      feeder(function(model){
+        model.state.isEditMode = 'true';
+      });
+    }
+    $('x-postlist').updateDarkDOM();
+  },
+  closeEdit: function(e, dark_root, feeder){
+    if (dark_root) {
+      dark_root.attr('edit-mode', false);
+    } else {
+      feeder(function(model){
+        model.state.isEditMode = 'false';
+      });
+    }
+    $('x-postlist').updateDarkDOM();
+  },
+  titleChange: function(e, dark_root, feeder){
+    var title, new_value = e.target.value;
+    if (dark_root) {
+      title = dark_root.find('x-title');
+      if (title[0]) {
+        title.html(new_value);
+      } else {
+        dark_root.append('<x-title>' 
+          + new_value + '</x-title>');
+      }
+    } else {
+      feeder(function(model){
+        model.componentData.title = {
+          contentData: { text: new_value }
+        };
+      });
     }
   },
-  tagsChange: function(e, node){
-    if (node[0].nodeName !== 'X-ITEM') {
-      return;
-    }
+  tagsChange: function(e, dark_root, feeder){
     var values = e.target.value.split(/\s*,\s*/);
-    values = values.map(function(v){
-      return '<x-tag>' + v + '</x-tag>';
-    }).join('');
-    var tags = node.find('x-tag');
-    if (tags[0]) {
-      tags.eq(0).before(values);
+    if (dark_root) {
+      dark_root.find('x-tag').remove();
+      dark_root.append(values.map(function(v){
+        return '<x-tag>' + v + '</x-tag>';
+      }).join(''));
     } else {
-      node.append(values);
+      feeder(function(model){
+        model.componentData.tag = values.map(function(v){
+          return {
+            contentData: { text: v }
+          };
+        });
+      });
     }
-    tags.remove();
   },
 };
 
@@ -236,13 +251,13 @@ function folder_spec(folder_guard){
 }
 
 var folder_events = {
-  toggle: function(e, node){
+  toggle: function(e, dark_root){
     var inverse = {
       'fold': 'unfold',
       'unfold': 'fold'
     };
-    var mode = inverse[node.attr('mode')];
-    node.attr('mode', mode).updateDarkDOM();
+    var mode = inverse[dark_root.attr('mode')];
+    dark_root.attr('mode', mode).updateDarkDOM();
   }
 };
 
@@ -254,6 +269,9 @@ list_spec(list_guard);
 list_guard.mount();
 
 //$('x-postlist').feedDarkDOM(function(source_model){
+  //source_model.componentData.item[0]
+    //.componentData.title
+    //.contentData.text += ' (Updated)';
   //source_model.componentData.item.push({
     //componentData: {
       //title: {
@@ -266,7 +284,6 @@ list_guard.mount();
       //text: 'Paragraph E'
     //}
   //});
-  //return source_model;
 //}).updateDarkDOM();
 
 });
