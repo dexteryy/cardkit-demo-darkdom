@@ -52,13 +52,13 @@ function folder_spec(folder_guard){
 }
 
 var folder_events = {
-  toggle: function(e, node){
+  toggle: function(e, dark_root){
     var inverse = {
       'fold': 'unfold',
       'unfold': 'fold'
     };
-    var mode = inverse[node.attr('mode')];
-    node.attr('mode', mode).updateDarkDOM();
+    var mode = inverse[dark_root.attr('mode')];
+    dark_root.attr('mode', mode).updateDarkDOM();
   }
 };
 
