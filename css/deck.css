@@ -1,0 +1,72 @@
+
+.demo-deck {
+  width:100%;
+  height:400px;
+  background:#eee;
+  position:relative;
+  border:1px solid #ccc;
+}
+
+.demo-deck-title {
+  height:40px;
+  line-height:40px;
+  text-align:center;
+  color:#999;
+}
+
+.demo-deck-inner {
+  background:#000;
+  position:absolute;
+  top:40px;
+  bottom:10px;
+  left:10px;
+  right:10px;
+  overflow:hidden;
+}
+
+.demo-card {
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  font-size:30px;
+  padding:10px;
+  z-index:1;
+  background:#fff;
+  -webkit-transition:-webkit-transform .4s;
+  -moz-transition:-moz-transform .4s;
+  transition:transform .4s;
+}
+
+.demo-card.slide-up {
+  -webkit-transform:translateY(100%);
+  -moz-transform:translateY(100%);
+  transform:translateY(100%);
+}
+
+.demo-card.slide-down {
+  -webkit-transform:translateY(-100%);
+  -moz-transform:translateY(-100%);
+  transform:translateY(-100%);
+}
+
+.demo-card.slide-left {
+  -webkit-transform:translateX(100%);
+  -moz-transform:translateX(100%);
+  transform:translateX(100%);
+}
+
+.demo-card.slide-right {
+  -webkit-transform:translateX(-100%);
+  -moz-transform:translateX(-100%);
+  transform:translateX(-100%);
+}
+
+.demo-deck-item:first-child .demo-card,
+.demo-card.enabled {
+  -webkit-transform:translate(0, 0);
+  -moz-transform:translate(0, 0);
+  transform:translate(0, 0);
+  z-index:10;
+}

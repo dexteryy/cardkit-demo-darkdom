@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CardKit Demo: Deck</title>
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<link href="css/deck.css" rel="stylesheet">
+</head>
+<body>
+<!-- vim: et:ts=2:sw=2:sts=2 -->
+
+<x-deck>
+    <x-card bgcolor="red">0</x-card>
+    <x-card transition-type="slide-right" bgcolor="green">1</x-card>
+    <x-card transition-type="none" bgcolor="yellow">2</x-card>
+    <x-card transition-type="slide-up" bgcolor="blue">3</x-card>
+    <x-card bgcolor="brown">4</x-card>
+    <x-card transition-type="slide-down" bgcolor="pink">5</x-card>
+    <x-card selected bgcolor="green">6</x-card>
+    <x-card bgcolor="orange" transition-type="slide-left">7</x-card>
+    <x-card bgcolor="cyan" transition-type="slide-left">8</x-card>
+    <x-card bgcolor="lime">9</x-card>
+</x-deck>
+
+<script src="bower_components/ozjs/oz.js"></script>
+<script src="js/oz.config.js"></script>
+<script src="js/deck.js"></script>
+<script>
+</script>
+
+</body>
+</html>
+

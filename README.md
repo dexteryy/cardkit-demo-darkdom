@@ -6,12 +6,13 @@
 
 ## Learning DarkDOM Visually
 
-<a href="darkdom.pdf" target="_blank"><img src="darkdom_thumbnail.png"></a>
+[![](http://douban-f2e.github.io/cardkit-demo-darkdom/darkdom_thumbnail.png)](http://douban-f2e.github.io/cardkit-demo-darkdom/darkdom.pdf)
 
-* [PDF version](darkdom.pdf)
-* [PNG version](darkdom.png)
+* [PDF version](http://douban-f2e.github.io/cardkit-demo-darkdom/darkdom.pdf)
+* [PNG version](http://douban-f2e.github.io/cardkit-demo-darkdom/darkdom.png)
+* [Online demo (folder)](http://douban-f2e.github.io/cardkit-demo-darkdom/folder.html)
 * [Online demo (list)](http://douban-f2e.github.io/cardkit-demo-darkdom/index.html)
-* [Online demo (Folder)](http://douban-f2e.github.io/cardkit-demo-darkdom/folder.html)
+* [Online demo (deck)](http://douban-f2e.github.io/cardkit-demo-darkdom/deck.html)
 
 ## Install/Update Dependencies
 
